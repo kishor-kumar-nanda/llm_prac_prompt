@@ -1,10 +1,10 @@
-# llm_prac_prompt
+# Research Paper Summarizer
 
 1. Post pulling the repo, add a .env file and insert API_KEY as:<br>
-HUGGINGFACEHUB_API_TOKEN="YOUR_HF_API_KEY"
+`HUGGINGFACEHUB_API_TOKEN="YOUR_HF_API_KEY"`
 
 2. Run the file as:<br>
-   streamlit run prompt_ui.py
+   `streamlit run prompt_ui.py`
 
 ### Pick a paper and click Generate the summary
 ![alt text](image.png)
