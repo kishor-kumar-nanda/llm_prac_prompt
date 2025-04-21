@@ -5,6 +5,8 @@ import time
 
 load_dotenv()
 
+hf_api_key = st.secrets["huggingface"]["api_key"]
+
 if 'model' not in st.session_state:
     try:
         model = uf.load_model()
@@ -32,7 +34,6 @@ if st.button("Summarize",use_container_width=True):
             try:
                 result = model.invoke(prompt)
                 st.write("**Response:**")
-                print(result.content)
                 st.write(result.content)
             except Exception as e:
                 st.error(f"Error generating response: {str(e)}")
