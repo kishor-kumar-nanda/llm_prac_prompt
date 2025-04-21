@@ -5,8 +5,6 @@ import time
 
 load_dotenv()
 
-hf_api_key = st.secrets["huggingface"]["api_key"]
-
 if 'model' not in st.session_state:
     try:
         model = uf.load_model()
