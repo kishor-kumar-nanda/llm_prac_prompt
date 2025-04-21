@@ -5,7 +5,7 @@ import time
 
 load_dotenv()
 
-hf_api_key = st.secrets["huggingface"]["api_key"]
+hf_api_key = st.secrets["huggingface"]["hf_api_key"]
 
 if 'model' not in st.session_state:
     try:
