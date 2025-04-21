@@ -46,7 +46,7 @@ def get_user_inputs():
         with col3:
             paper_length = st.selectbox(
                 "How would you want your output be?",
-                ("Short (30-100 words: 1 paragraph)", "Medium (100-250 words: 2-3 paragraphs)", "Long (250-500 words: 3-5 paragraphs)", "Detailed (500-1023 words: 5+ paragraphs)"),
+                ("Short (1 paragraph)", "Medium (2-3 paragraphs)", "Long (3-5 paragraphs)", "Detailed (5+ paragraphs)"),
             )
     return paper_name,style_type,paper_length
 
@@ -60,6 +60,11 @@ def get_prompt():
             Explaination Style: {style}
             Explaination Length: {length}
 
+            if Explaination Length is "Short (1 paragraph)", then the summary should be concise and to the point in 30-100 words.
+            if Explaination Length is "Medium (2-3 paragraphs)", then the summary should be a bit more detailed, but still concise in 100-250 words.
+            if Explaination Length is "Long (3-5 paragraphs)", then the summary should be detailed and cover all important aspects of the paper in 250-500 words.
+            if Explaination Length is "Detailed (5+ paragraphs)", then the summary should be very detailed and cover all important aspects of the paper in 500-1000 words.
+
             1. Mathematical details:
                 - Include relevant mathematical equations present in the paper.
                 - Explain the mathematical concepts using simple, intuitive code snippets where ever applicable.
@@ -70,7 +75,8 @@ def get_prompt():
             If certain information is not available in the paper, kindly respond with: "Insufficient information available", instead of guessing.
             Please ensure the summary is clear, accurate and aligned with the provided style and length.
         """,
-        input_variables=["paper_name","style","length"]
+        input_variables=["paper_name","style","length"],
+        validate_template=True
     )
 
     # fill the placeholder with user inputs
