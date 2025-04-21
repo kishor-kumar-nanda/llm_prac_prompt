@@ -6,7 +6,7 @@
 2. Run the file as:<br>
    `streamlit run prompt_ui.py`
 
-### Pick a paper and click Generate the summary
+### Pick a Paper and click 'Summarize' to Generate the summary
 ![alt text](image.png)
 
 ### Generated Response
